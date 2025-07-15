@@ -1,0 +1,29 @@
+@if (sortedVehicles().length > 0) {
+
+<app-sort-vehicle-list
+  (sortChange)="onSortChange($event)"
+></app-sort-vehicle-list>
+
+<input
+  type="text"
+  placeholder="Search by model or make"
+  (input)="onSearch($event)"
+/>
+
+<section>
+  @for (vehicle of sortedVehicles(); let i = $index; track i) {
+  <div>
+    <a [routerLink]="['/vehicles', vehicle.id]">
+      {{ vehicle?.model }} ({{ vehicle?.id }})
+    </a>
+    {{ vehicle?.price }}
+    {{ vehicle?.mileage }}
+    {{ vehicle?.colour }}
+    {{ vehicle?.make }}
+  </div>
+  }
+</section>
+
+} @else {
+<p>No Vehicles! Try Searching</p>
+}

@@ -1,0 +1,7 @@
+<select (change)="onSortChange($event)">
+  @for (option of sortOptions; let i = $index; track i) {
+  <option [value]="option.key">
+    {{ option.label }}
+  </option>
+  }
+</select>

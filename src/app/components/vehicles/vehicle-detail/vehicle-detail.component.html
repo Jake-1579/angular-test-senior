@@ -1,0 +1,11 @@
+@if(vehicle$ | async; as vehicle) {
+<div>ID: {{ vehicle?.id }}</div>
+<div>Make: {{ vehicle?.make }}</div>
+<div>Model: {{ vehicle?.model }}</div>
+<div>Year: {{ vehicle?.year }}</div>
+<div>Price: {{ vehicle?.price }}</div>
+<div>Mileage: {{ vehicle?.mileage }}</div>
+<div>Colour: {{ vehicle?.colour }}</div>
+} @else {
+<p>Error!</p>
+}
